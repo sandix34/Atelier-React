@@ -39,10 +39,7 @@ class App extends Component {
   }
 
   // méthode qui permet de changer le selectedMovie
-  updateSelectedMovie = (title) => {
-    const index = this.state.movies.findIndex((m) => {
-      return title === m.title;
-    })
+  updateSelectedMovie = (index) => {
     this.setState({
       selectedMovie: index
     })

@@ -4,7 +4,7 @@ Ce projet a été démarré avec [Create React App](https://github.com/facebook/
 
 - Liste de films récupérée avec l' API externe [The Movie DB](https://www.themoviedb.org/)
 
-- Afficher des détails d'un film
+- Afficher les détails d'un film
 
 - Barre de recherche utilisant l' API externe pour récupérer les films
 
@@ -18,7 +18,7 @@ Ce projet a été démarré avec [Create React App](https://github.com/facebook/
 - Axios
 
 
-## Available Scripts
+## Scripts disponibles
 
 Dans le répertoire du projet, vous pouvez exécuter:
 

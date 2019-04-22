@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Header, MovieList, MovieDetails, Loading, SearchBar } from './components';
+import { Header, MovieList, MovieDetails, Loading, SearchBar,   } from './components';
 import apiMovie, { apiMovieMap } from './conf/apiMovie';
+import GithubCorner from 'react-github-corner';
 
 class App extends Component {
 
@@ -41,7 +42,9 @@ class App extends Component {
   render() {
     return (
       <div className="App d-flex flex-column" >
+      
         <Header />
+        <GithubCorner />
         <SearchBar updateMovies={this.updateMovies} />
         {this.state.loaded ? (
           <div className="d-flex flex-row flex-fill pt-4 p-2" >
@@ -49,6 +52,7 @@ class App extends Component {
               movies={this.state.movies}
               updateSelectedMovie={this.updateSelectedMovie} />
             <MovieDetails movie={this.state.movies[this.state.selectedMovie]} />
+            <GithubCorner href="https://github.com/sandix34/Atelier-React" />
           </div>
         ) : (
             <Loading />

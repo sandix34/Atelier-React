@@ -1,29 +1,37 @@
 import React, { Component } from 'react';
-import { Header, MovieList, MovieDetails, Loading } from './components';
-import dataMovies from './data';
+import { Header, MovieList, MovieDetails, Loading, SearchBar } from './components';
+import apiMovie, { apiMovieMap } from './conf/apiMovie';
 
 class App extends Component {
 
-  // Déclaration du state
   constructor(props) {
     super(props);
     this.state = {
-      // initialise la liste de films à null
       movies: null,
-       // le film sélèctionné initialisé à 0 c'est à dire sur le 1ier film de l'array movies
       selectedMovie: 0,
-      loaded: false 
+      loaded: false
     }
 
-    setTimeout( () => {
-      this.setState({
-        movies: dataMovies ,
-      loaded: true
-      })
-    }, 2000);
   }
 
-  // méthode qui permet de changer le selectedMovie
+  componentDidMount() {
+    apiMovie.get('/discover/movie')
+      .then(response => response.data.results)
+      .then(moviesApi => {
+        const movies = moviesApi.map(apiMovieMap);
+        this.updateMovies(movies);
+      })
+      .catch(err => console.log(err));
+  }
+
+  updateMovies = (movies) => {
+    console.log(movies)
+    this.setState({
+      movies,
+      loaded: true
+    })
+  }
+
   updateSelectedMovie = (index) => {
     this.setState({
       selectedMovie: index
@@ -32,16 +40,19 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App d-flex flex-column">
-      <Header />
-      { this.state.loaded ? (
-        <div className="d-flex flex-row flex-fill pt-4 p-2">
-        <MovieList movies={ this.state.movies } updateSelectedMovie={ this.updateSelectedMovie } />
-        <MovieDetails movie={ this.state.movies[this.state.selectedMovie] }/>
-        </div>
-      ) : (
-        <Loading />
-      ) }
+      <div className="App d-flex flex-column" >
+        <Header />
+        <SearchBar updateMovies={this.updateMovies} />
+        {this.state.loaded ? (
+          <div className="d-flex flex-row flex-fill pt-4 p-2" >
+            <MovieList
+              movies={this.state.movies}
+              updateSelectedMovie={this.updateSelectedMovie} />
+            <MovieDetails movie={this.state.movies[this.state.selectedMovie]} />
+          </div>
+        ) : (
+            <Loading />
+          )}
       </div>
     );
   }

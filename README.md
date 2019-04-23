@@ -1,4 +1,4 @@
-Ce projet a été démarré avec [Create React App](https://github.com/facebook/create-react-app).
+### Ce projet guidé a été réalisé dans le cadre de la formation e-learning React proposé par [Dyma](https://dyma.fr/)  :fr: :thumbsup:
 
 ## Fonctionnalités du projet
 
@@ -21,6 +21,8 @@ Ce projet a été démarré avec [Create React App](https://github.com/facebook/
 - API externe [The Movie DB](https://www.themoviedb.org/)
 - [React-Router-Dom](https://reacttraining.com/react-router/web/guides/quick-start)
 
+
+Ce projet a été démarré avec [Create React App](https://github.com/facebook/create-react-app).
 
 ## Scripts disponibles
 

@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { Header } from './components';
 import apiMovie, { apiMovieMap } from './conf/apiMovie';
-import Films from './features/films'
+import Films from './features/films';
+import Favoris from './features/favoris/components';
 import GithubCorner from 'react-github-corner';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 
 
 class App extends Component {
@@ -43,16 +45,29 @@ class App extends Component {
 
   render() {
     return (
+      <Router>
       <div className="App d-flex flex-column" >
         <Header />
-        <Films
-          loaded={ this.state.loaded }
-          updateMovies={ this.updateMovies }
-          updateSelectedMovie={ this.updateSelectedMovie }
-          movies={ this.state.movies }
-          selectedMovie={ this.state.selectedMovie }
-        />
+        <Switch>
+          <Route path="/films" render={ (props) => { 
+            return (
+              <Films
+                { ...props }
+                loaded={ this.state.loaded }
+                updateMovies={ this.updateMovies }
+                updateSelectedMovie={ this.updateSelectedMovie }
+                movies={ this.state.movies }
+                selectedMovie={ this.state.selectedMovie }
+              />
+            )
+           } } />
+          <Route path="/favoris" component={ Favoris } />
+          <Redirect to="/films" />
+        </Switch>
+        
+        <GithubCorner href="https://github.com/sandix34/Atelier-React" />
       </div>
+      </Router>
     );
   }
 }

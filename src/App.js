@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Header } from './components';
 import apiMovie, { apiMovieMap } from './conf/apiMovie';
 import Films from './features/films';
-import Favoris from './features/favoris/components';
+import Favoris from './features/favoris';
 import GithubCorner from 'react-github-corner';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 
@@ -83,7 +83,14 @@ class App extends Component {
               />
             )
            } } />
-          <Route path="/favoris" component={ Favoris } />
+          <Route path="/favoris" render={ (props) => {
+            return (
+              <Favoris 
+                favoris={ this.state.favoris }
+                removeFavori={ this.removeFavori }
+              />
+            ) 
+          } } />
           <Redirect to="/films" />
         </Switch>
         

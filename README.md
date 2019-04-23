@@ -14,10 +14,12 @@ Ce projet a été démarré avec [Create React App](https://github.com/facebook/
 
 ## Les outils
 
-- Bootstrap
-- Utilisation de Sass et des modules CSS
-- Formik
+- [Bootstrap](http://localhost:3000)
+- Utilisation de [Sass](https://sass-guidelin.es/fr/) et des modules CSS
+- [Formik](https://jaredpalmer.com/formik/) & [Yup](https://github.com/jquense/yup)
 - Axios
+- API externe [The Movie DB](https://www.themoviedb.org/)
+- [React-Router-Dom](https://reacttraining.com/react-router/web/guides/quick-start)
 
 
 ## Scripts disponibles

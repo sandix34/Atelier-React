@@ -10,6 +10,8 @@ Ce projet a été démarré avec [Create React App](https://github.com/facebook/
 
 - Gérer une liste de favoris : ajouter un film, le suprimer, etc...
 
+![demoAlloMovies2](https://user-images.githubusercontent.com/44428775/56596209-6dc9aa00-65f0-11e9-8904-62e44cf6ab1d.gif)
+
 ## Les outils
 
 - Bootstrap

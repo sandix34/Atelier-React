@@ -5,6 +5,7 @@ import Films from './features/films';
 import Favoris from './features/favoris';
 import GithubCorner from 'react-github-corner';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import apiFirebase from './conf/api.firebase';
 
 
 class App extends Component {
@@ -15,7 +16,7 @@ class App extends Component {
       movies: null,
       selectedMovie: 0,
       loaded: false,
-      favoris: []
+      favoris: null
     }
 
   }
@@ -28,13 +29,19 @@ class App extends Component {
         this.updateMovies(movies);
       })
       .catch(err => console.log(err));
+
+    apiFirebase.get('favoris.json')
+      .then( response => {
+        let favoris = response.data ? response.data : [] ;
+        this.updateFavori(favoris)
+      } )  
   }
 
   updateMovies = (movies) => {
     console.log(movies)
     this.setState({
       movies,
-      loaded: true
+      loaded: this.state.favoris ? true : false
     })
   }
 
@@ -44,12 +51,21 @@ class App extends Component {
     })
   }
 
+  updateFavori = (favoris) => {
+    this.setState({
+      favoris,
+      loaded: this.state.movies ? true : false
+    })
+  }
+
   addFavori = (title) => {
     const favoris = this.state.favoris.slice();
     const film = this.state.movies.find( m => m.title === title );
     favoris.push(film);
     this.setState({ 
       favoris
+     }, () => {
+      this.saveFavoris();
      })
   }
 
@@ -59,7 +75,13 @@ class App extends Component {
     favoris.splice(index, 1);
     this.setState({ 
       favoris
+     }, () => {
+      this.saveFavoris();
      })
+  }
+
+  saveFavoris = () => {
+    apiFirebase.put('favoris.json', this.state.favoris);
   }
 
   render() {
@@ -79,7 +101,7 @@ class App extends Component {
                 selectedMovie={ this.state.selectedMovie }
                 addFavori={ this.addFavori }
                 removeFavori={ this.removeFavori }
-                favoris={ this.state.favoris.map( f => f.title ) }
+                favoris={ this.state.favoris }
               />
             )
            } } />
@@ -92,8 +114,7 @@ class App extends Component {
             ) 
           } } />
           <Redirect to="/films" />
-        </Switch>
-        
+        </Switch>  
         <GithubCorner href="https://github.com/sandix34/Atelier-React" />
       </div>
       </Router>

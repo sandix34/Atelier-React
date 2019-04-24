@@ -14,12 +14,13 @@
 
 ## Les outils
 
-- [Bootstrap](http://localhost:3000)
+- [Bootstrap](https://getbootstrap.com/)
 - Utilisation de [Sass](https://sass-guidelin.es/fr/) et des modules CSS
-- [Formik](https://jaredpalmer.com/formik/) & [Yup](https://github.com/jquense/yup)
-- Axios
-- API externe [The Movie DB](https://www.themoviedb.org/)
-- [React-Router-Dom](https://reacttraining.com/react-router/web/guides/quick-start)
+- [Formik](https://jaredpalmer.com/formik/)(utilisé par airbnb, lyft, docker etc) & [Yup](https://github.com/jquense/yup) pour la gestion de la barre de recherche.
+- [Axios](https://github.com/axios/axios) pour réaliser des requêtes HTTP vers le serveur ou les API tierces.
+- API externe [The Movie DB](https://www.themoviedb.org/) pour récupérer la liste de films.
+- [React-Router-Dom](https://reacttraining.com/react-router/web/guides/quick-start) permettant de simuler la navigation entre plusieurs pages, tout en restant sur une SPA
+- [Firebase](https://firebase.google.com/) afin de pouvoir utiliser une base de données sans avoir à passer par un serveur.
 
 
 Ce projet a été démarré avec [Create React App](https://github.com/facebook/create-react-app).

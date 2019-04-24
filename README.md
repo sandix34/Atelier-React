@@ -1,4 +1,6 @@
-### Ce projet guidé a été réalisé dans le cadre de la formation e-learning React proposé par [Dyma](https://dyma.fr/)  :fr: :thumbsup:
+[![Netlify Status](https://api.netlify.com/api/v1/badges/f58d52e0-fc14-4f89-8503-65c872c42aac/deploy-status)](https://app.netlify.com/sites/loving-bohr-5d6ec3/deploys)
+
+### Ce [ projet :link: ](https://loving-bohr-5d6ec3.netlify.com/films) guidé a été réalisé dans le cadre de la formation e-learning React proposé par [Dyma](https://dyma.fr/)  :fr: :thumbsup:
 
 ## Fonctionnalités du projet
 
@@ -21,6 +23,7 @@
 - API externe [The Movie DB](https://www.themoviedb.org/) pour récupérer la liste de films.
 - [React-Router-Dom](https://reacttraining.com/react-router/web/guides/quick-start) permettant de simuler la navigation entre plusieurs pages, tout en restant sur une SPA
 - [Firebase](https://firebase.google.com/) afin de pouvoir utiliser une base de données sans avoir à passer par un serveur.
+- Déploiement avec [Netlify](https://www.netlify.com/)
 
 
 Ce projet a été démarré avec [Create React App](https://github.com/facebook/create-react-app).

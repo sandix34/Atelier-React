@@ -1,4 +1,4 @@
- :link: [ Voir le projet en ligne ](https://loving-bohr-5d6ec3.netlify.com/films)
+ :link: [ Voir le projet en ligne ](https://loving-bohr-5d6ec3.netlify.com)
 
 ### Ce projet guidé a été réalisé dans le cadre de la formation e-learning React proposé par [Dyma](https://dyma.fr/)  :fr: :thumbsup:
 

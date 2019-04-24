@@ -1,13 +1,13 @@
 import * as axios from 'axios';
 
-const API_KEY =`${process.env.REACT_APP_API_KEY}`
+const  API_KEY =`${process.env.REACT_APP_API_KEY}`
 
 const apiMovie = axios.create({
   baseURL: 'https://api.themoviedb.org/4'
 })
 
 apiMovie.interceptors.request.use( req => {
-  req.headers['Authorization'] = API_KEY 
+  req.headers['Authorization'] =  API_KEY   
   return req;
 })
 

@@ -1,6 +1,6 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/f58d52e0-fc14-4f89-8503-65c872c42aac/deploy-status)](https://app.netlify.com/sites/loving-bohr-5d6ec3/deploys)
+ :link: [ Voir le projet en ligne ](https://loving-bohr-5d6ec3.netlify.com/films)
 
-### Ce [ projet ](https://loving-bohr-5d6ec3.netlify.com/films) guidé a été réalisé dans le cadre de la formation e-learning React proposé par [Dyma](https://dyma.fr/)  :fr: :thumbsup:
+### Ce projet guidé a été réalisé dans le cadre de la formation e-learning React proposé par [Dyma](https://dyma.fr/)  :fr: :thumbsup:
 
 ## Fonctionnalités du projet
 
